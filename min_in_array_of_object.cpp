@@ -23,14 +23,18 @@ int main()
         cin >> a[i].roll >> a[i].total_marks;
     }
 
-    int mn = INT_MAX;
+    Student mn;
+    mn.total_marks = INT_MAX;
 
     for (int i = 0; i < n; i++)
     {
-        mn = min(a[i].total_marks, mn);
+        if (mn.total_marks > a[i].total_marks)
+        {
+            mn = a[i];
+        }
     }
 
-    cout << mn << endl;
+    cout << mn.name << " " << mn.roll << " " << mn.total_marks << endl;
 
     return 0;
 }

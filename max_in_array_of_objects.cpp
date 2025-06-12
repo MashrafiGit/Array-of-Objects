@@ -24,14 +24,18 @@ int main()
         cin.ignore();
     }
 
-    int mx = INT_MIN;
+    Student mx;
+    mx.total_marks = INT_MIN;
 
     for (int i = 0; i < n; i++)
     {
-        mx = max(a[i].total_marks, mx);
+        if (mx.total_marks < a[i].total_marks)
+        {
+            mx = a[i];
+        }
     }
 
-    cout << mx << endl;
+    cout << mx.name << " " << mx.roll << " " << mx.total_marks << endl;
 
     return 0;
 }
